@@ -42,8 +42,7 @@ RSpec.feature "See shop items", type: :feature do
     kitchenware.items.create!(name: '包丁', recommended: true)
     kitchenware.items.create!(name: 'フライパン')
 
-    tableware = create(:category, name: '食器')
-    tableware.items.create!(name: '大皿')
+    create(:item, name: '大皿')
 
     visit uncategorized_items_path
     expect(page).not_to have_text('包丁')
