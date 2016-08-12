@@ -36,4 +36,21 @@ RSpec.feature "See shop items", type: :feature do
 
     expect(page).not_to have_text('大皿')
   end
+  
+  scenario 'A user can see uncategorized items', type: :feature do
+    kitchenware = create(:category, name: '調理器具')
+    kitchenware.items.create!(name: '包丁', recommended: true)
+    kitchenware.items.create!(name: 'フライパン')
+
+    tableware = create(:category, name: '食器')
+    tableware.items.create!(name: '大皿')
+
+    visit uncategorized_items_path
+    expect(page).not_to have_text('包丁')
+    expect(page).not_to have_text('フライパン')
+
+    expect(page).to have_text('大皿')
+  end
+
+
 end

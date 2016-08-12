@@ -17,6 +17,11 @@ class ItemsController < ApplicationController
     render action: :index
   end
 
+  #def uncategorized
+    #@items = Item.where(category_id: nil)
+    #render action: :index
+  #end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def get_items 
