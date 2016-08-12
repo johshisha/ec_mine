@@ -1,0 +1,11 @@
+/Users/sato/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20160813-60963-1cdkrpv.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20160813-60963-1uoyt3f
